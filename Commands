@@ -1,0 +1,11 @@
+Azure Hacking Commands
+
+Set-ExecutionPolicy -Scope CurrentUser Bypass
+Install-Module AADInternals
+Import-Module AADInternals
+Invoke-AADIntReconAsOutsider -DomainName pwny.cloud
+Import-Module 'MicroBurst-master\MicroBurst.psm1'
+
+Invoke-EnumerateAzureSubDomains -Base pwnycloud -Verbose
+
+Get-Content .\users.txt | Invoke-AADIntUserEnumerationAsOutsider -Method Normal
